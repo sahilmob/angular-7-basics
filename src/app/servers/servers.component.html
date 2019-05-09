@@ -36,5 +36,10 @@
 <p *ngIf="displayDetails">Secret password = tuna</p>
 
 <ul *ngIf="displayDetailsButtonClicksArray">
-  <li *ngFor="let item of displayDetailsButtonClicksArray">{{ item }}</li>
+  <li
+    *ngFor="let item of displayDetailsButtonClicksArray; let i = index"
+    [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  >
+    {{ item }}
+  </li>
 </ul>
