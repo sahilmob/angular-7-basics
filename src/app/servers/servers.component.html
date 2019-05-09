@@ -29,3 +29,12 @@
 </button>
 
 <p>{{ usernameCreationStatus }}</p>
+
+<button class="btn btn-primary" (click)="onToggleDetails()">
+  Display details
+</button>
+<p *ngIf="displayDetails">Secret password = tuna</p>
+
+<ul *ngIf="displayDetailsButtonClicksArray">
+  <li *ngFor="let item of displayDetailsButtonClicksArray">{{ item }}</li>
+</ul>

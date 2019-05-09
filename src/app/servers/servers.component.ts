@@ -15,6 +15,9 @@ export class ServersComponent implements OnInit {
   username = "";
   serverCreated = false;
   servers = ["Testserver", "Testserver 2"];
+  displayDetails = false;
+  displayDetailsButtonClicksCounter = 0;
+  displayDetailsButtonClicksArray = [];
 
   constructor() {
     setTimeout(() => {
@@ -37,5 +40,13 @@ export class ServersComponent implements OnInit {
   onSetUsername() {
     this.usernameCreationStatus = `${this.username} created`;
     this.username = "";
+  }
+
+  onToggleDetails() {
+    this.displayDetails = !this.displayDetails;
+    this.displayDetailsButtonClicksCounter += 1;
+    this.displayDetailsButtonClicksArray.push(
+      this.displayDetailsButtonClicksCounter
+    );
   }
 }
